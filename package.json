@@ -2,7 +2,7 @@
   "name": "css-inliner-cli",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "cli.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/Vorbert-Kruk/css-inliner-cli/issues"
   },
-  "homepage": "https://github.com/Vorbert-Kruk/css-inliner-cli#readme"
+  "homepage": "https://github.com/Vorbert-Kruk/css-inliner-cli#readme",
+  "bin": {
+    "inline": "./cli.js"
+  }
 }

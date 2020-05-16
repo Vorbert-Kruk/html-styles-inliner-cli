@@ -14,13 +14,18 @@ getFileData(inputFile).then(html => {
   if (!linkElements && linkElements.length === 0) return;
 
   const stylePaths = linkElements
-    .filter(linkElement => linkElement.rawAttrs.includes('stylesheet'))
-    .map(linkElement =>
-      linkElement.rawAttrs.substring(
-        linkElement.rawAttrs.indexOf('href'),
-        linkElement.rawAttrs.indexOf(fileExtensions.css) + fileExtensions.css.length,
-      ),
-    );
+    .filter(linkElement => {
+      const linkAttributes = linkElement.rawAttrs;
+      return linkAttributes.includes('stylesheet');
+    })
+    .map(linkElement => {
+      const linkAttributes = linkElement.rawAttrs;
+
+      return linkAttributes.substring(
+        linkAttributes.indexOf('href'),
+        linkAttributes.indexOf(fileExtensions.css) + fileExtensions.css.length,
+      );
+    });
 
   console.log(stylePaths);
 });

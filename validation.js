@@ -1,5 +1,5 @@
 const { minArgsQuantity } = require('./consts');
-const argsAreValid = () => !!process.args && process.args.length > minArgsQuantity;
+const argsAreValid = () => !!process.argv && process.argv.slice(2).length >= minArgsQuantity;
 
 module.exports = {
   argsAreValid,

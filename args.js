@@ -2,7 +2,7 @@ const { argsAreValid } = require('./validation');
 
 if (!argsAreValid()) throw new Error('Provided arguments are not valid!');
 
-const args = process.args.slice(2);
+const args = process.argv.slice(2);
 
 const getArgValue = argName => {
   const argIndex = args.indexOf(`--${argName}`);

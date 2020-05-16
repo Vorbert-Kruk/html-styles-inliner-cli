@@ -1,4 +1,7 @@
 #!/usr/bin/env node
-const sayName = name => console.log(`Hello ${name}`);
+const { getArgValue } = require('./args');
+const { params } = require('./consts');
 
-sayName('hehehe');
+console.log(getArgValue(params.input), getArgValue(params.output));
+
+// inline <ścieżka do html-a> <output html-a>

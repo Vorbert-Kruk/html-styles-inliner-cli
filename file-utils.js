@@ -13,7 +13,25 @@ const getFileData = path =>
     }),
   );
 
+const getFilesData = (...paths) =>
+  new Promise(res => {
+    let filesData = '';
+
+    paths.forEach(async (path, pathIndex) => {
+      const fileData = await getFileData(path);
+      filesData += fileData;
+
+      if (pathIndex === paths.length - 1) res(filesData);
+    });
+  });
+
+const createFile = (path, data) => {
+  // TODO
+};
+
 module.exports = {
   fileExists,
   getFileData,
+  getFilesData,
+  createFile,
 };

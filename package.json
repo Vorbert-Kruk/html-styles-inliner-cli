@@ -18,5 +18,8 @@
   "homepage": "https://github.com/Vorbert-Kruk/css-inliner-cli#readme",
   "bin": {
     "inline": "./cli.js"
+  },
+  "dependencies": {
+    "node-html-parser": "^1.2.16"
   }
 }

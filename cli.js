@@ -38,6 +38,9 @@ getFileData(inputFile).then(async html => {
   await createFile(outputFile, htmlDocument.innerHTML);
 
   console.log('Wooohooo, udało się! :D');
+  // https://www.npmjs.com/package/mkdirp -> Tworzenie folderów
+  // https://github.com/cheeriojs/cheerio -> DOM
+  // https://www.npmjs.com/package/htmlparser2 -> DOM
 });
 
 console.log('Nie wydupcyłem się c:');

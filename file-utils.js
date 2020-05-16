@@ -1,10 +1,19 @@
 const _fs = require('fs');
 const _path = require('path');
+const { getAbsoluteFilePath } = require('./utils');
 
-const currentWorkingDirectory = process.cwd();
+const fileExists = path => _fs.existsSync(getAbsoluteFilePath(path));
 
-const fileExists = path => _fs.existsSync(_path.join(currentWorkingDirectory, path));
+const getFileData = path =>
+  new Promise(res =>
+    _fs.readFile(path, 'utf8', (err, data) => {
+      if (err) throw err;
+
+      res(data);
+    }),
+  );
 
 module.exports = {
   fileExists,
+  getFileData,
 };

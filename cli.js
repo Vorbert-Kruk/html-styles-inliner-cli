@@ -1,12 +1,13 @@
 #!/usr/bin/env node
 const { getArgValue } = require('./args');
+const { getAbsoluteFilePath } = require('./utils');
 const { params } = require('./consts');
-const { fileExists } = require('./file-utils');
+const { fileExists, getFileData } = require('./file-utils');
 
-const inputFile = getArgValue(params.input);
-const outputFile = getArgValue(params.output);
+const inputFile = getAbsoluteFilePath(getArgValue(params.input));
+const outputFile = getAbsoluteFilePath(getArgValue(params.output));
 
-if (!fileExists(inputFile)) throw new Error(`Provided input path: '${inputFile}' is incorrect!`);
+getFileData(inputFile).then(data => console.log(data));
 
 console.log('Nie wydupcyłem się c:');
 

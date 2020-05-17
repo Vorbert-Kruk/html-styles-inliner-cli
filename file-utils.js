@@ -1,7 +1,7 @@
 const mkdirp = require('mkdirp');
 const _fs = require('fs');
 const _path = require('path');
-const { getAbsoluteFilePath } = require('./utils');
+const { getAbsoluteFilePath, displayErr } = require('./utils');
 
 const fileExists = path => _fs.existsSync(getAbsoluteFilePath(path));
 
@@ -27,17 +27,17 @@ const getFilesData = (...paths) =>
   });
 
 const createFile = (path, data) =>
-  new Promise((res, err) => {
+  new Promise(res => {
     const fileDirectoryPath = _path.dirname(path);
     mkdirp(fileDirectoryPath)
       .then(() => {
         _fs.writeFile(path, data, err => {
-          if (err) throw new Error(`The problem has occured, while creating file: ${err}`);
+          if (err) displayErr(`The problem has occured, while creating file`, err);
 
           res();
         });
       })
-      .catch(err => new Error(`The problem has occured, while creating directories: ${err}`));
+      .catch(err => displayErr(`The problem has occured, while creating directories`, err));
   });
 
 module.exports = {

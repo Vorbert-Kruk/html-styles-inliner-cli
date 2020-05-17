@@ -43,8 +43,7 @@ getFileData(inputFile).then(async html => {
   // https://www.npmjs.com/package/htmlparser2 -> DOM
 });
 
-console.log('Nie wydupcyłem się c:');
-
 // inline <ścieżka do html-a> <output html-a>
 // TODO -> dodać tworzenie inline css-a z tagów <style />
 // TODO -> dodać obsługę zewnętrznych styli
+// TODO -> Obsługa błędów i unifikowanie ich sposobu wyświetlania się

@@ -20,6 +20,7 @@
     "inline": "./cli.js"
   },
   "dependencies": {
+    "mkdirp": "^1.0.4",
     "node-html-parser": "^1.2.16"
   }
 }

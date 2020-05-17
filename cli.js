@@ -3,7 +3,7 @@ const _path = require('path');
 const { getArgValue } = require('./args');
 const { getAbsoluteFilePath, urlRegex } = require('./utils');
 const { params } = require('./consts');
-const { getFileData, getFilesData } = require('./file-utils');
+const { getFileData, getFilesData, createFile } = require('./file-utils');
 const { parse } = require('node-html-parser');
 
 const inputFile = getAbsoluteFilePath(getArgValue(params.input));
@@ -46,3 +46,5 @@ getFileData(inputFile).then(async html => {
 console.log('Nie wydupcyłem się c:');
 
 // inline <ścieżka do html-a> <output html-a>
+// TODO -> dodać tworzenie inline css-a z tagów <style />
+// TODO -> dodać obsługę zewnętrznych styli

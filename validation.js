@@ -1,4 +1,4 @@
-const { minArgsQuantity, params, fileExtensions } = require('./consts');
+const { params, fileExtensions } = require('./consts');
 const { removeQuoteMarks } = require('./utils');
 const _path = require('path');
 

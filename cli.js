@@ -1,4 +1,3 @@
-#!/usr/bin/env node
 require('./validation');
 const _path = require('path');
 const inlineCss = require('inline-css');

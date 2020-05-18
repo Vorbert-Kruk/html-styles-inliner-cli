@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 const _path = require('path');
 const { getArgValue } = require('./args');
-const { getAbsoluteFilePath, urlRegex } = require('./utils');
+const { getAbsoluteFilePath, urlRegex, removeDomElement } = require('./utils');
 const { params, baseOutputFilePrefix } = require('./consts');
 const { getFileData, getFilesData, createFile } = require('./file-utils');
 const { parse } = require('node-html-parser');
@@ -15,16 +15,16 @@ const projectRootDirectory = _path.dirname(inputFile);
 
 getFileData(inputFile).then(async html => {
   const htmlDocument = parse(html);
-
   const linkElements = htmlDocument.querySelectorAll('link');
   if (!linkElements || linkElements.length === 0) return;
 
-  linkElements.forEach(linkElement => linkElement.parentNode.removeChild(linkElement));
+  linkElements.forEach(linkElement => removeDomElement(linkElement));
+
   const stylePaths = linkElements
     .filter(
       linkElement =>
         linkElement.getAttribute('rel') === 'stylesheet' &&
-        !urlRegex.test(linkElement.getAttribute('rel')),
+        !urlRegex.test(linkElement.getAttribute('href')),
     )
     .map(linkElement =>
       getAbsoluteFilePath(linkElement.getAttribute('href'), projectRootDirectory),
@@ -45,6 +45,5 @@ getFileData(inputFile).then(async html => {
 });
 
 // inline <ścieżka do html-a> <output html-a>
-// TODO -> dodać tworzenie inline css-a z tagów <style />
 // TODO -> dodać obsługę zewnętrznych styli
 // TODO -> Obsługa błędów i unifikowanie ich sposobu wyświetlania się

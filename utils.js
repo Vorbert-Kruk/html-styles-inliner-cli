@@ -13,10 +13,13 @@ const displayErr = (message, err) => {
   throw new Error(`${message}: ${err}`);
 };
 
+const removeDomElement = element => element.parentNode.removeChild(element);
+
 module.exports = {
   getAbsoluteFilePath,
   urlRegex,
   quoteMarksRegex,
   removeQuoteMarks,
   displayErr,
+  removeDomElement,
 };

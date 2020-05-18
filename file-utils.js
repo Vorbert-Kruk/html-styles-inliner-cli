@@ -1,7 +1,10 @@
 const mkdirp = require('mkdirp');
 const _fs = require('fs');
 const _path = require('path');
-const { getAbsoluteFilePath, displayErr } = require('./utils');
+const { getAbsoluteFilePath, displayErr, removeQuoteMarks } = require('./utils');
+
+const fileHasValidExtension = (filePath, extensionName) =>
+  filePath && _path.extname(removeQuoteMarks(filePath)) === extensionName;
 
 const fileExists = path => _fs.existsSync(getAbsoluteFilePath(path));
 
@@ -45,4 +48,5 @@ module.exports = {
   getFileData,
   getFilesData,
   createFile,
+  fileHasValidExtension,
 };

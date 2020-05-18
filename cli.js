@@ -1,4 +1,5 @@
 #!/usr/bin/env node
+require('./validation');
 const _path = require('path');
 const { getArgValue } = require('./args');
 const { getAbsoluteFilePath, urlRegex, removeDomElements } = require('./utils');

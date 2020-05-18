@@ -1,1 +1,1 @@
-# css-inliner-cli
+# html-styles-inliner-cli

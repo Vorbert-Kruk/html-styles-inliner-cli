@@ -5,6 +5,7 @@ const { getAbsoluteFilePath, urlRegex } = require('./utils');
 const { params } = require('./consts');
 const { getFileData, getFilesData, createFile } = require('./file-utils');
 const { parse } = require('node-html-parser');
+const inlineCss = require('inline-css');
 
 const inputFile = getAbsoluteFilePath(getArgValue(params.input));
 const outputFile = getAbsoluteFilePath(getArgValue(params.output));
@@ -12,7 +13,7 @@ const projectRootDirectory = _path.dirname(inputFile);
 
 getFileData(inputFile).then(async html => {
   const htmlDocument = parse(html);
-  const documentHead = htmlDocument.querySelector('head');
+
   const linkElements = htmlDocument.querySelectorAll('link');
   if (!linkElements || linkElements.length === 0) return;
 
@@ -23,7 +24,6 @@ getFileData(inputFile).then(async html => {
         linkElement.getAttribute('rel') === 'stylesheet' &&
         !urlRegex.test(linkElement.getAttribute('rel')),
     )
-
     .map(linkElement =>
       getAbsoluteFilePath(linkElement.getAttribute('href'), projectRootDirectory),
     );
@@ -32,10 +32,12 @@ getFileData(inputFile).then(async html => {
 
   const stylesData = await getFilesData(...stylePaths);
 
-  documentHead.insertAdjacentHTML('afterbegin', `<style></style>`);
-  documentHead.querySelector('style').set_content(stylesData);
+  const inlinedHtml = await inlineCss(htmlDocument.innerHTML, {
+    url: ' ',
+    extraCss: stylesData,
+  });
 
-  await createFile(outputFile, htmlDocument.innerHTML);
+  await createFile(outputFile, inlinedHtml);
 
   console.log('Wooohooo, udało się! :D');
   // https://www.npmjs.com/package/mkdirp -> Tworzenie folderów

@@ -20,9 +20,7 @@
     "inline": "./cli.js"
   },
   "dependencies": {
-    "cheerio": "^1.0.0-rc.3",
     "inline-css": "^2.6.3",
-    "jsdom": "^16.2.2",
     "lodash.isempty": "^4.4.0",
     "mkdirp": "^1.0.4",
     "node-html-parser": "^1.2.16"

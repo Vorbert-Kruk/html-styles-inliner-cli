@@ -46,7 +46,3 @@ getFileData(inputFile).then(async html => {
 
   console.log(`Inlined html has been successfully!\r\nPath to the file: ${outputFile}`);
 });
-
-// inline <ścieżka do html-a> <output html-a>
-// TODO -> dodać obsługę zewnętrznych styli
-// TODO -> Obsługa błędów i unifikowanie ich sposobu wyświetlania się

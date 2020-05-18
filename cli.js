@@ -2,13 +2,15 @@
 const _path = require('path');
 const { getArgValue } = require('./args');
 const { getAbsoluteFilePath, urlRegex } = require('./utils');
-const { params } = require('./consts');
+const { params, baseOutputFilePrefix } = require('./consts');
 const { getFileData, getFilesData, createFile } = require('./file-utils');
 const { parse } = require('node-html-parser');
 const inlineCss = require('inline-css');
 
 const inputFile = getAbsoluteFilePath(getArgValue(params.input));
-const outputFile = getAbsoluteFilePath(getArgValue(params.output));
+const outputFile = getAbsoluteFilePath(
+  getArgValue(params.output) || `./${baseOutputFilePrefix}${_path.basename(inputFile)}`,
+);
 const projectRootDirectory = _path.dirname(inputFile);
 
 getFileData(inputFile).then(async html => {
@@ -40,9 +42,6 @@ getFileData(inputFile).then(async html => {
   await createFile(outputFile, inlinedHtml);
 
   console.log('Wooohooo, udało się! :D');
-  // https://www.npmjs.com/package/mkdirp -> Tworzenie folderów
-  // https://github.com/cheeriojs/cheerio -> DOM
-  // https://www.npmjs.com/package/htmlparser2 -> DOM
 });
 
 // inline <ścieżka do html-a> <output html-a>

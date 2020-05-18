@@ -1,4 +1,5 @@
 const { minArgsQuantity, params, fileExtensions } = require('./consts');
+const { removeQuoteMarks } = require('./utils');
 const _path = require('path');
 
 const getArgValue = argName => {
@@ -13,7 +14,7 @@ const getArgValue = argName => {
 };
 
 const fileHasValidExtension = (filePath, extensionName) =>
-  filePath && _path.extname(filePath) === extensionName;
+  filePath && _path.extname(removeQuoteMarks(filePath)) === extensionName;
 
 const argsAreValid = () => {
   const inputFilePath = getArgValue(params.input);
@@ -21,7 +22,6 @@ const argsAreValid = () => {
 
   return (
     !!process.argv &&
-    inputFilePath &&
     fileHasValidExtension(inputFilePath, fileExtensions.html) &&
     (!outputFilePath || fileHasValidExtension(outputFilePath, fileExtensions.html))
   );

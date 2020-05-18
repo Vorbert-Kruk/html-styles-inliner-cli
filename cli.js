@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 const _path = require('path');
 const { getArgValue } = require('./args');
-const { getAbsoluteFilePath, urlRegex, removeDomElement } = require('./utils');
+const { getAbsoluteFilePath, urlRegex, removeDomElements } = require('./utils');
 const { params, baseOutputFilePrefix } = require('./consts');
 const { getFileData, getFilesData, createFile } = require('./file-utils');
 const { parse } = require('node-html-parser');
@@ -19,7 +19,7 @@ getFileData(inputFile).then(async html => {
   const linkElements = htmlDocument.querySelectorAll('link');
   if (isEmpty(linkElements)) return;
 
-  linkElements.forEach(linkElement => removeDomElement(linkElement));
+  removeDomElements(linkElements);
 
   const stylePaths = linkElements
     .filter(

@@ -15,6 +15,8 @@ const displayErr = (message, err) => {
 
 const removeDomElement = element => element.parentNode.removeChild(element);
 
+const removeDomElements = elements => elements.forEach(element => removeDomElement(element));
+
 module.exports = {
   getAbsoluteFilePath,
   urlRegex,
@@ -22,4 +24,5 @@ module.exports = {
   removeQuoteMarks,
   displayErr,
   removeDomElement,
+  removeDomElements,
 };

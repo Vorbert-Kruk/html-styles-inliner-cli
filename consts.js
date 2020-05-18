@@ -10,7 +10,7 @@ const fileExtensions = {
 
 const minArgsQuantity = 4;
 
-const baseOutputFilePrefix = 'inlined';
+const baseOutputFilePrefix = 'inlined-';
 
 module.exports = {
   params,

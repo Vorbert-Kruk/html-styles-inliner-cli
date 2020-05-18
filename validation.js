@@ -23,7 +23,7 @@ const argsAreValid = () => {
     !!process.argv &&
     inputFilePath &&
     fileHasValidExtension(inputFilePath, fileExtensions.html) &&
-    fileHasValidExtension(outputFilePath, fileExtensions.html)
+    (!outputFilePath || fileHasValidExtension(outputFilePath, fileExtensions.html))
   );
 };
 

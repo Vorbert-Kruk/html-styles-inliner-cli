@@ -43,7 +43,7 @@ getFileData(inputFile).then(async html => {
 
   await createFile(outputFile, inlinedHtml);
 
-  console.log('Wooohooo, udało się! :D');
+  console.log(`Inlined html has been successfully!\r\nPath to the file: ${outputFile}`);
 });
 
 // inline <ścieżka do html-a> <output html-a>

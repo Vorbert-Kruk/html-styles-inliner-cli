@@ -1,10 +1,10 @@
 {
   "name": "css-inliner-cli",
   "version": "1.0.0",
-  "description": "",
+  "description": "Command line tool, that inlines styles from the provided html file. This tool inlines styles from both <styles /> and <link /> tags",
   "main": "cli.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo TODO"
   },
   "repository": {
     "type": "git",

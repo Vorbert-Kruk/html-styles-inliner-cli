@@ -6,6 +6,7 @@ const { params, baseOutputFilePrefix } = require('./consts');
 const { getFileData, getFilesData, createFile } = require('./file-utils');
 const { parse } = require('node-html-parser');
 const inlineCss = require('inline-css');
+const isEmpty = require('lodash.isempty');
 
 const inputFile = getAbsoluteFilePath(getArgValue(params.input));
 const outputFile = getAbsoluteFilePath(
@@ -16,7 +17,7 @@ const projectRootDirectory = _path.dirname(inputFile);
 getFileData(inputFile).then(async html => {
   const htmlDocument = parse(html);
   const linkElements = htmlDocument.querySelectorAll('link');
-  if (!linkElements || linkElements.length === 0) return;
+  if (isEmpty(linkElements)) return;
 
   linkElements.forEach(linkElement => removeDomElement(linkElement));
 
@@ -30,7 +31,7 @@ getFileData(inputFile).then(async html => {
       getAbsoluteFilePath(linkElement.getAttribute('href'), projectRootDirectory),
     );
 
-  if (!stylePaths || stylePaths.length === 0) return;
+  if (isEmpty(stylePaths)) return;
 
   const stylesData = await getFilesData(...stylePaths);
 

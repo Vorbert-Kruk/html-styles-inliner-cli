@@ -1,13 +1,14 @@
 #!/usr/bin/env node
 require('./validation');
 const _path = require('path');
-const { getArgValue } = require('./args');
-const { getAbsoluteFilePath, urlRegex, removeDomElements } = require('./utils');
-const { params, baseOutputFilePrefix } = require('./consts');
-const { getFileData, getFilesData, createFile } = require('./file-utils');
-const { parse } = require('node-html-parser');
 const inlineCss = require('inline-css');
 const isEmpty = require('lodash.isempty');
+const { parse } = require('node-html-parser');
+
+const { getArgValue } = require('./modules/args');
+const { getAbsoluteFilePath, urlRegex, removeDomElements } = require('./modules/utils');
+const { params, baseOutputFilePrefix } = require('./modules/consts');
+const { getFileData, getFilesData, createFile } = require('./modules/file-utils');
 
 const inputFile = getAbsoluteFilePath(getArgValue(params.input));
 const outputFile = getAbsoluteFilePath(

@@ -17,7 +17,8 @@
   },
   "homepage": "https://github.com/Vorbert-Kruk/css-inliner-cli#readme",
   "bin": {
-    "inline": "./cli.js"
+    "inline": "./cli.js",
+    "css-inliner-cli": "./cli.js"
   },
   "dependencies": {
     "inline-css": "^2.6.3",

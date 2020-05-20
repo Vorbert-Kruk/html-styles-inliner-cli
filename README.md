@@ -25,13 +25,13 @@ npm install html-css-inliner-cli
 inline --input <path to html file> --output <path, where the file will be generated>
 ```
 
-#### Example
+### **Example**
 
 ```shell
 inline --input ./index.html --output ./build/another-directory/inlinedIndex.html
 ```
 
-#### NOTE
+### **NOTE**
 
 You can eiter use command using either the `inline` and `html-styles-inliner-cli` as the name of the command.
 eg.:

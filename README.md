@@ -31,7 +31,7 @@ inline --input <path to html file> --output <path, where the file will be genera
 inline --input ./index.html --output ./build/another-directory/inlinedIndex.html
 ```
 
-### **NOTE**
+### **Note**
 
 You can eiter use command using either the `inline` and `html-styles-inliner-cli` as the name of the command.
 eg.:
@@ -88,7 +88,7 @@ But if the link tag looks like that: `<link rel="stylesheet" href="styles/bootst
 - Bbetter error detection,
 - Optimization of the args reading,
 - Shorter substitute for the CLI options. Eg.: `--input` would be also allowed as `-i`,
-- Tests for development purposes
+- Tests for the development purposes.
 
 # License
 

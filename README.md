@@ -75,6 +75,117 @@ inline --input ./public/index.html --output ./public/inlined-index.html
 
 # Examples
 
+## file structure:
+
+```
+- partials
+    > index.html
+    > styles
+        > main.css
+```
+
+## index.html:
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Example usage of html-styles-inliner-cli</title>
+    <link rel="stylesheet" href="./styles/main.css" />
+  </head>
+  <body>
+    <div class="container">
+      <p class="container--text">Example</p>
+    </div>
+  </body>
+</html>
+```
+
+## main.css:
+
+```css
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  min-height: 100vh;
+  background-color: #192841;
+  color: #fff;
+}
+
+.container {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  padding: 0.75rem 1rem;
+  transform: translate(-50%, -50%);
+  background-color: #2a3f64;
+  border-radius: 0.5rem;
+}
+
+.container--text {
+  font-size: 1.15rem;
+}
+```
+
+### Command:
+
+```shell
+inline --input partials/index.html --output public/inlined-index.html
+```
+
+## **Will result in:**
+
+## file structure:
+
+```
+- partials
+    > index.html
+    > styles
+        > main.css
+- public
+    > inlined-index.html
+```
+
+## Generated inlined-index.html:
+
+```html
+<!DOCTYPE html>
+<html lang="en" style="box-sizing: border-box; margin: 0; padding: 0;">
+  <head style="box-sizing: border-box; margin: 0; padding: 0;">
+    <meta charset="UTF-8" style="box-sizing: border-box; margin: 0; padding: 0;" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0"
+      style="box-sizing: border-box; margin: 0; padding: 0;"
+    />
+    <title style="box-sizing: border-box; margin: 0; padding: 0;">
+      Example usage of html-styles-inliner-cli
+    </title>
+  </head>
+  <body
+    style="background-color: #192841; box-sizing: border-box; color: #fff; margin: 0; min-height: 100vh; padding: 0;"
+  >
+    <div
+      class="container"
+      style="background-color: #2a3f64; border-radius: 0.5rem; box-sizing: border-box; left: 50%; margin: 0; padding: 0.75rem 1rem; position: absolute; top: 50%; transform: translate(-50%, -50%);"
+    >
+      <p
+        class="container--text"
+        style="box-sizing: border-box; font-size: 1.15rem; margin: 0; padding: 0;"
+      >
+        Example
+      </p>
+    </div>
+  </body>
+</html>
+```
+
 # Current support
 
 Currently html-css-inliner-cli does not supports inlining styles, that are imported with the url, not local path.

@@ -75,7 +75,7 @@ inline --input ./public/index.html --output ./public/inlined-index.html
 
 # Examples
 
-## file structure:
+### file structure:
 
 ```
 - partials
@@ -84,7 +84,7 @@ inline --input ./public/index.html --output ./public/inlined-index.html
         > main.css
 ```
 
-## index.html:
+### index.html:
 
 ```html
 <!DOCTYPE html>
@@ -103,7 +103,7 @@ inline --input ./public/index.html --output ./public/inlined-index.html
 </html>
 ```
 
-## main.css:
+### main.css:
 
 ```css
 * {
@@ -139,9 +139,9 @@ body {
 inline --input partials/index.html --output public/inlined-index.html
 ```
 
-## **Will result in:**
+### **Will result in:**
 
-## file structure:
+### file structure:
 
 ```
 - partials
@@ -152,7 +152,7 @@ inline --input partials/index.html --output public/inlined-index.html
     > inlined-index.html
 ```
 
-## Generated inlined-index.html:
+### Generated inlined-index.html:
 
 ```html
 <!DOCTYPE html>

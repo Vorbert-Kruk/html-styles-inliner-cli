@@ -1,6 +1,7 @@
 # html-styles-inliner-cli
 
-Opis
+CLI tool, that makes it possible to inline the styles in the html file. <br />
+html-styles-inliner-cli inlines the styles with the usage of both `<link>` and `<style/>` tags.
 
 **Table of contents**
 

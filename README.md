@@ -48,11 +48,11 @@ The execution of those 2 commands will have the **exact** same results.
 
 # Options
 
-## --input <path> (required)
+### **--input <path> (required)**
 
 path to the html file, that you need to have with the inlined styles.
 
-## --output <path> (optional)
+### **--output <path> (optional)**
 
 path, where the html file, with inlined styles, will be generated.
 

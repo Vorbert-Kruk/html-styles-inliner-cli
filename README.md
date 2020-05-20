@@ -58,7 +58,7 @@ path to the html file, that you need to have with the inlined styles.
 path, where the html file, with inlined styles, will be generated.
 
 If no path is specified, then the file will be generated in the same directory as the original file.
-Generated file will have the same name as the original file, but with the prefix of "inlined-". <br /> <br />
+Generated file will have the same name as the original file, but with the prefix of "inlined-". <br />
 Eg.: If the input file path is `./public/index.html` then the file will be generated in `./public/inlined-index.html`
 
 So the following command:

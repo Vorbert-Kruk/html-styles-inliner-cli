@@ -1,6 +1,6 @@
 {
   "name": "html-styles-inliner-cli",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "Command line tool, that inlines styles from the provided html file. This tool inlines styles from both <styles /> and <link /> tags",
   "main": "stylesInliner.js",
   "scripts": {
@@ -25,5 +25,15 @@
     "lodash.isempty": "^4.4.0",
     "mkdirp": "^1.0.4",
     "node-html-parser": "^1.2.16"
-  }
+  },
+  "keywords": [
+    "css inliner",
+    "html-css-inliner-cli",
+    "css inliner cli",
+    "html styles inliner",
+    "css inliner cli",
+    "mail inliner",
+    "mail inliner cli",
+    "cli"
+  ]
 }

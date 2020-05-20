@@ -1,4 +1,4 @@
-require('./validation');
+require('./modules/validation');
 const _path = require('path');
 const inlineCss = require('inline-css');
 const isEmpty = require('lodash.isempty');

@@ -2,7 +2,7 @@
   "name": "html-styles-inliner-cli",
   "version": "1.0.0",
   "description": "Command line tool, that inlines styles from the provided html file. This tool inlines styles from both <styles /> and <link /> tags",
-  "main": "cli.js",
+  "main": "stylesInliner.js",
   "scripts": {
     "test": "echo TODO"
   },
@@ -17,8 +17,8 @@
   },
   "homepage": "https://github.com/Vorbert-Kruk/html-styles-inliner-cli#readme",
   "bin": {
-    "inline": "./bin/cli.js",
-    "html-styles-inliner-cli": "./bin/cli.js"
+    "inline": "./cli.js",
+    "html-styles-inliner-cli": "./cli.js"
   },
   "dependencies": {
     "inline-css": "^2.6.3",

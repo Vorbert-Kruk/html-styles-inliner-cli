@@ -197,7 +197,7 @@ But if the link tag looks like that: `<link rel="stylesheet" href="styles/bootst
 # Future changes
 
 - Allowing inlining the styles with the URL import,
-- Bbetter error detection,
+- Better error detection,
 - Optimization of the args reading,
 - Shorter substitute for the CLI options. Eg.: `--input` would be also allowed as `-i`,
 - Tests for the development purposes.

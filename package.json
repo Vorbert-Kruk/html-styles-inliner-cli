@@ -18,6 +18,7 @@
     "html-styles-inliner-cli": "./bin/cli.js"
   },
   "dependencies": {
+    "command-line-args": "^5.1.1",
     "inline-css": "^2.6.3",
     "lodash.isempty": "^4.4.0",
     "mkdirp": "^1.0.4",

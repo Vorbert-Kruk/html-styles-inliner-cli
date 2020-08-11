@@ -2,9 +2,12 @@
 
 const _path = require('path');
 const inlineHtmlStyles = require('../stylesInliner.js');
-const { getArgValue } = require('../modules/args.js');
+const { getArgs } = require('../modules/args.js');
 const { params, baseOutputFilePrefix } = require('../modules/consts.js');
 const { getAbsoluteFilePath, getRelativePath } = require('../modules/utils.js');
+
+const args = getArgs();
+console.log(args);
 
 const inputFile = getAbsoluteFilePath(getArgValue(params.input));
 const outputFile =

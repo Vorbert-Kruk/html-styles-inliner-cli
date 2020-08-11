@@ -1,12 +1,14 @@
-const { params, fileExtensions } = require('./consts');
+const { fileExtensions } = require('./consts');
 const { fileHasValidExtension, fileExists } = require('./file-utils');
-const { getArgValue } = require('./args');
+const { getArgs } = require('./args');
+
+const args = getArgs();
 
 const argsAreValid = () => {
-  const inputFilePath = getArgValue(params.input);
-  const outputFilePath = getArgValue(params.output);
+  const { input: inputFilePath, output: outputFilePath } = args;
 
-  if (!inputFilePath) throw new Error(`You didn't provide correct path to the input html file!`);
+  if (!inputFilePath)
+    throw new Error(`You didn't provide correct path to the input html file!`);
 
   if (!fileExists(inputFilePath))
     throw new Error(`Provided input path: '${inputFilePath}' is incorrect!`);
@@ -14,7 +16,8 @@ const argsAreValid = () => {
   return (
     !!process.argv &&
     fileHasValidExtension(inputFilePath, fileExtensions.html) &&
-    (!outputFilePath || fileHasValidExtension(outputFilePath, fileExtensions.html))
+    (!outputFilePath ||
+      fileHasValidExtension(outputFilePath, fileExtensions.html))
   );
 };
 

@@ -6,7 +6,7 @@ const params = {
   output: {
     name: 'output',
     type: String,
-  }
+  },
 };
 
 const fileExtensions = {

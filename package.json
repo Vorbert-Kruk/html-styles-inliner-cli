@@ -1,6 +1,6 @@
 {
   "name": "html-styles-inliner-cli",
-  "version": "1.1.4",
+  "version": "1.2.4",
   "description": "Command line tool, that inlines styles from the provided html file. This tool inlines styles from both <styles /> and <link /> tags",
   "main": "stylesInliner.js",
   "repository": {

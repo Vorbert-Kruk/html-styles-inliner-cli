@@ -1,6 +1,12 @@
 const params = {
-  input: 'input',
-  output: 'output',
+  input: {
+    name: 'input',
+    type: String,
+  },
+  output: {
+    name: 'output',
+    type: String,
+  },
 };
 
 const fileExtensions = {

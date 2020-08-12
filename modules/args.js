@@ -1,14 +1,13 @@
-const getArgValue = argName => {
-  const args = process.argv.slice(2);
-  const argIndex = args.indexOf(`--${argName}`);
+const { params } = require('./consts.js');
+const commandLineArgs = require('command-line-args');
 
-  if (argIndex !== -1 && args[argIndex + 1] !== undefined) {
-    return args[argIndex + 1];
-  }
+const optionDefinitions = Object.values(params).map(param => ({
+  ...param,
+  alias: param.name.charAt(0),
+}));
 
-  return null;
-};
+const getArgs = () => commandLineArgs(optionDefinitions);
 
 module.exports = {
-  getArgValue,
+  getArgs,
 };

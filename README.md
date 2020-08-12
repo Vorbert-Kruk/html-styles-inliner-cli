@@ -49,13 +49,15 @@ The execution of those 2 commands will have the **exact** same results.
 
 # Options
 
-### **--input <path> (required)**
+### **-i, --input &lt;path&gt; (required)**
 
-path to the html file, that you need to have with the inlined styles.
+path to the html file, which styles you need to inline.
 
-### **--output <path> (optional)**
+### **-o, --output &lt;path&gt; (optional)**
 
 path, where the html file, with inlined styles, will be generated.
+
+### **Note**
 
 If no path is specified, then the file will be generated in the same directory as the original file.
 Generated file will have the same name as the original file, but with the prefix of "inlined-". <br />
@@ -158,7 +160,10 @@ inline --input partials/index.html --output public/inlined-index.html
 <!DOCTYPE html>
 <html lang="en" style="box-sizing: border-box; margin: 0; padding: 0;">
   <head style="box-sizing: border-box; margin: 0; padding: 0;">
-    <meta charset="UTF-8" style="box-sizing: border-box; margin: 0; padding: 0;" />
+    <meta
+      charset="UTF-8"
+      style="box-sizing: border-box; margin: 0; padding: 0;"
+    />
     <meta
       name="viewport"
       content="width=device-width, initial-scale=1.0"
@@ -196,10 +201,10 @@ But if the link tag looks like that: `<link rel="stylesheet" href="styles/bootst
 
 # Future changes
 
-- Allowing inlining the styles with the URL import,
+- Allowing inlining of the styles with the URL import,
 - Better error detection,
-- Optimization of the args reading,
-- Shorter substitute for the CLI options. Eg.: `--input` would be also allowed as `-i`,
+- ~~Optimization of the args reading~~ ✔️,
+- ~~Shorter substitute for the CLI options. Eg.: `--input` would be also allowed as `-i`~~ ✔️,
 - Tests for the development purposes.
 
 # License

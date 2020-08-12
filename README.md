@@ -49,11 +49,11 @@ The execution of those 2 commands will have the **exact** same results.
 
 # Options
 
-### **-i, --input <path> (required)**
+### **-i, --input &lt;path&gt; (required)**
 
-path to the html file, that you need to have with the inlined styles.
+path to the html file, which styles you need to inline.
 
-### **-o, --output <path> (optional)**
+### **-o, --output &lt;path&gt; (optional)**
 
 path, where the html file, with inlined styles, will be generated.
 

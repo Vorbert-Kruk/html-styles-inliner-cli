@@ -49,13 +49,15 @@ The execution of those 2 commands will have the **exact** same results.
 
 # Options
 
-### **--input <path> (required)**
+### **-i, --input <path> (required)**
 
 path to the html file, that you need to have with the inlined styles.
 
-### **--output <path> (optional)**
+### **-o, --output <path> (optional)**
 
 path, where the html file, with inlined styles, will be generated.
+
+### **Note**
 
 If no path is specified, then the file will be generated in the same directory as the original file.
 Generated file will have the same name as the original file, but with the prefix of "inlined-". <br />
@@ -198,9 +200,10 @@ But if the link tag looks like that: `<link rel="stylesheet" href="styles/bootst
 
 - Allowing inlining the styles with the URL import,
 - Better error detection,
-- Optimization of the args reading,
-- Shorter substitute for the CLI options. Eg.: `--input` would be also allowed as `-i`,
+- ~~Optimization of the args reading~~ DONE in version ...,
+- ~~Shorter substitute for the CLI options. Eg.: `--input` would be also allowed as `-i`~~ DONE in version ...,
 - Tests for the development purposes.
+- Changelog
 
 # License
 

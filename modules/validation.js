@@ -10,7 +10,7 @@ const argsAreValid = () => {
   if (!inputFilePath)
     throw new Error(`You didn't provide correct path to the input html file!`);
 
-  if (!fileExists(inputFilePath))
+  else if (!fileExists(inputFilePath))
     throw new Error(`Provided input path: '${inputFilePath}' is incorrect!`);
 
   return (

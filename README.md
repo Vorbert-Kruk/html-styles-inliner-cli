@@ -160,7 +160,10 @@ inline --input partials/index.html --output public/inlined-index.html
 <!DOCTYPE html>
 <html lang="en" style="box-sizing: border-box; margin: 0; padding: 0;">
   <head style="box-sizing: border-box; margin: 0; padding: 0;">
-    <meta charset="UTF-8" style="box-sizing: border-box; margin: 0; padding: 0;" />
+    <meta
+      charset="UTF-8"
+      style="box-sizing: border-box; margin: 0; padding: 0;"
+    />
     <meta
       name="viewport"
       content="width=device-width, initial-scale=1.0"
@@ -198,12 +201,11 @@ But if the link tag looks like that: `<link rel="stylesheet" href="styles/bootst
 
 # Future changes
 
-- Allowing inlining the styles with the URL import,
+- Allowing inlining of the styles with the URL import,
 - Better error detection,
-- ~~Optimization of the args reading~~ DONE in version ...,
-- ~~Shorter substitute for the CLI options. Eg.: `--input` would be also allowed as `-i`~~ DONE in version ...,
+- ~~Optimization of the args reading~~ ✔️,
+- ~~Shorter substitute for the CLI options. Eg.: `--input` would be also allowed as `-i`~~ ✔️,
 - Tests for the development purposes.
-- Changelog
 
 # License
 

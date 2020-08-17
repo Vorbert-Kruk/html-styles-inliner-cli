@@ -1,6 +1,6 @@
 # html-styles-inliner-cli
 
-CLI tool, that makes it possible to inline the styles in the html file. <br />
+CLI tool, that makes it possible to inline styles inside of the html file. <br />
 html-styles-inliner-cli inlines the styles with the usage of both `<link>` and `<style/>` tags.
 
 **Table of contents**
@@ -61,7 +61,8 @@ path, where the html file, with inlined styles, will be generated.
 
 If no path is specified, then the file will be generated in the same directory as the original file.
 Generated file will have the same name as the original file, but with the prefix of "inlined-". <br />
-Eg.: If the input file path is `./public/index.html` then the file will be generated in `./public/inlined-index.html`
+
+For example, if the input file path is `./public/index.html` then the file will be generated as `./public/inlined-index.html`
 
 So the following command:
 
@@ -193,11 +194,11 @@ inline --input partials/index.html --output public/inlined-index.html
 
 # Current support
 
-Currently html-css-inliner-cli does not supports inlining styles, that are imported with the url, not local path.
+Currently html-css-inliner-cli does not support inlining styles, that are being imported with the url, not the local path.
 
-For example, if the file has link tag like that: `<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">`, then it won't work
+For example, if the file contains link tag like that: `<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">`, then it won't work.
 
-But if the link tag looks like that: `<link rel="stylesheet" href="styles/bootstrap/4.3.1/css/bootstrap.min.css">`, then it should work
+But if the link tag looks like that: `<link rel="stylesheet" href="styles/bootstrap/4.3.1/css/bootstrap.min.css">`, then it should work.
 
 # Future changes
 
